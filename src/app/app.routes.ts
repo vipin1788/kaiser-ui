@@ -1,0 +1,14 @@
+import { Routes } from '@angular/router';
+import { MemberIdComponent } from './pages/member-id/member-id.component';
+import { BenefitsComponent } from './pages/benefits/benefits.component';
+import { ClaimsComponent } from './pages/claims/claims.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
+import { CareComponent } from './pages/care/care.component';
+
+export const routes: Routes = [
+  { path: '', component: MemberIdComponent },
+  { path: 'benefits', component: BenefitsComponent },
+  { path: 'claims', component: ClaimsComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'care', component: CareComponent}
+];

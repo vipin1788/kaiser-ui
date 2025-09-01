@@ -1,0 +1,38 @@
+.app-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #e5e7eb;
+  padding: 10px 0;
+  color: #6b7280;
+  font-size: 13px;
+  z-index: 1000;
+}
+
+.app-tabbar .active {
+  color: #1166ff;
+  font-weight: 700;
+}
+
+/* ---------- Mobile styles for App Tabbar ---------- */
+@media (max-width: 600px) {
+  .app-tabbar {
+    padding: 8px 0;
+    font-size: 12px;   /* slightly smaller text */
+  }
+
+  .app-tabbar div {
+    flex: 1;                     /* equal spacing for tabs */
+    text-align: center;
+    padding: 6px 0;
+  }
+
+  .app-tabbar .active {
+    font-weight: 600;
+    font-size: 13px;             /* keep active tab a bit more visible */
+  }
+}

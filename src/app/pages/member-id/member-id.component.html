@@ -1,0 +1,95 @@
+<app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+<div class="web-shell">
+  <div class="web-topbar">
+    <div class="web-brand">🏥 Member Portal</div>
+    <div class="web-actions">
+      <button class="tab" [class.active]="activeTab === 'idcards'" (click)="setActiveTab('idcards')">
+        ID Cards
+      </button>
+      <button class="tab" [class.active]="activeTab === 'travelids'" (click)="setActiveTab('travelids')">
+        Travel IDs
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="activeTab === 'idcards'">
+    <div class="web-grid">
+    <div class="web-left">
+      <div class="member-chip">
+        <div class="avatar"> <i class="fas fa-users"></i></div>
+        <div>
+          <div class="name">{{selectedMember}}</div>
+          <div class="hint">Viewing ID for member</div>
+        </div>
+        <span class="chev">▾</span>
+
+        <!-- Dropdown -->
+        <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
+          <option *ngFor="let member of members" [value]="member">
+            {{ member }}
+          </option>
+        </select>
+      </div>
+
+      <div class="id-card">
+        <div class="id-top">
+          <div class="kp-badge">
+            <span>KAISER PERMANENTE</span>
+            <span class="pill">Southern California</span>
+          </div>
+          <img alt="Maryland" src="assets/md-badge.svg" />
+        </div>
+
+        <div class="id-grid">
+          <div>
+            <div class="id-label">Medical Record Number/ID</div>
+            <div class="id-value">1651561611</div>
+          </div>
+        </div>
+
+        <div class="id-member">
+          <div class="id-label">Member Name</div>
+          <div class="id-value">{{selectedMember}}</div>
+        </div>
+
+        <div class="id-row-3">
+          <div class="id-field">
+            <div class="label">RxBin</div>
+            <div class="value">003585</div>
+          </div>
+          <div class="id-field">
+            <div class="label">RxPCN</div>
+            <div class="value">7000</div>
+          </div>
+          <div class="id-field">
+            <div class="label">RxGroup</div>
+            <div class="value">7000</div>
+          </div>
+        </div>
+
+        <div class="id-row-3" style="margin-top:6px">
+          <div class="id-field" style="grid-column:3/4">
+            <div class="label">Group No</div>
+            <div class="value">12345-A00</div>
+          </div>
+        </div>
+
+        <div class="id-actions">
+          <button class="tiny-btn"> Add to Apple Wallet</button>
+          <div class="right" style="display:flex;gap:8px">
+            <button class="tiny-btn">Share</button>
+            <button class="tiny-btn">Full Screen</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="web-right web-list">
+      <div class="row"><a [routerLink]="['/benefits']">Benefits</a><span>›</span></div>
+      <div class="row"><a [routerLink]="['/claims']">Claims</a> <span>›</span></div>
+      <div class="row"><a [routerLink]="['/contacts']">Contacts</a><span>›</span></div>
+      <div class="row"><a [routerLink]="['/care']">Care Outside of Kaiser</a> <span>›</span></div>
+    </div>
+  </div>
+  </ng-container>
+  <app-footer></app-footer>
+</div>

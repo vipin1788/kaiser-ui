@@ -1,0 +1,128 @@
+.benefits {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(17,24,39,.08);
+  overflow: hidden;
+  color: #111827;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+}
+
+.content .info {
+  font-size: 13px;
+  color: #374151;
+}
+
+.content .info a {
+  color: #1166ff;
+  text-decoration: none;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+
+.item {
+  padding: 14px 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.item:first-child {
+  border-top: 0;
+}
+
+.title {
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.lines {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.plan {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.plan .icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0369a1;
+  font-weight: 800;
+}
+
+/* ---------- Mobile styles for Benefits ---------- */
+@media (max-width: 600px) {
+  .benefits {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;   /* edge-to-edge on mobile */
+    box-shadow: none;   /* cleaner flat layout */
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .content .info {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .item {
+    padding: 12px 10px;
+  }
+
+  .title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .lines {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .plan {
+    gap: 8px;
+  }
+
+  .plan .icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,124 @@
+.care {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(17,24,39,.08);
+  overflow: hidden;
+  color: #111827;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #111827;
+}
+
+.phone-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.04);
+}
+
+.phone-card .phone-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.phone-card .phone-num {
+  color: #1166ff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.policy {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.logos div {
+  background: #f3f4f6;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #9ca3af;
+  font-weight: 700;
+}
+/* ---------- Mobile styles for Care Outside of Kaiser ---------- */
+@media (max-width: 600px) {
+  .care {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;   /* edge-to-edge on mobile */
+    box-shadow: none;   /* remove heavy card shadow */
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .phone-card {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+
+  .phone-card .phone-title {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .phone-card .phone-num {
+    font-size: 14px;
+    margin: 6px 0;
+    display: block;         /* ensures it sits on its own line */
+    word-break: break-word; /* wrap long numbers */
+  }
+
+  .phone-card .phone-note {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #555;
+  }
+
+  .policy {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+
+  .logos {
+    grid-template-columns: repeat(2, 1fr); /* reduce to 2 per row */
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .logos div {
+    height: 50px;
+    font-size: 12px;
+  }
+}

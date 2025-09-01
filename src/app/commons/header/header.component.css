@@ -1,0 +1,49 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.app-header .back {
+  background: none;
+  border: 0;
+  color: #1166ff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app-header .title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-weight: 800;
+}
+
+.app-header .spacer {
+  width: 40px;
+}
+
+/* ---------- Mobile styles for App Header ---------- */
+@media (max-width: 600px) {
+  .app-header {
+    padding: 10px 12px;
+  }
+
+  .app-header .back {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 6px;
+  }
+
+  .app-header .title {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .app-header .spacer {
+    width: 30px; /* smaller so title centers better */
+  }
+}
