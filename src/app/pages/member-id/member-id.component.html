@@ -13,83 +13,98 @@
   </div>
   <ng-container *ngIf="activeTab === 'idcards'">
     <div class="web-grid">
-    <div class="web-left">
-      <div class="member-chip">
-        <div class="avatar"> <i class="fas fa-users"></i></div>
-        <div>
-          <div class="name">{{selectedMember}}</div>
-          <div class="hint">Viewing ID for member</div>
-        </div>
-        <span class="chev">▾</span>
+      <div class="web-left">
+        <div class="member-chip">
+          <div class="avatar"> <i class="fas fa-users"></i></div>
+          <div>
+            <div class="name">{{selectedMember}}</div>
+            <div class="hint">Viewing ID for member</div>
+          </div>
+          <span class="chev">▾</span>
 
-        <!-- Dropdown -->
-        <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
-          <option *ngFor="let member of members" [value]="member">
-            {{ member }}
-          </option>
-        </select>
-      </div>
+          <!-- Dropdown -->
+          <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
+            <option *ngFor="let member of members" [value]="member">
+              {{ member }}
+            </option>
+          </select>
+        </div>
 
       <div class="id-card">
-        <div class="id-top">
-          <div class="kp-badge">
-            <span>KAISER PERMANENTE</span>
-            <span class="pill">Southern California</span>
-          </div>
-          <img alt="Maryland" src="assets/md-badge.svg" />
-        </div>
+  <!-- Blue Header -->
+  <div class="id-card-header">
+    <img src="/assets/kaiser-logo.png" alt="Kaiser Permanente" />
+    <span class="region">Southern California</span>
+  </div>
 
-        <div class="id-grid">
-          <div>
-            <div class="id-label">Medical Record Number/ID</div>
-            <div class="id-value">1651561611</div>
-          </div>
-        </div>
+  <!-- Card Body -->
+  <div class="id-card-body">
+    <div class="left">
+      <div class="id-field">
+        <div class="label">Medical Record Number/ID</div>
+        <div class="value">1651561611</div>
+      </div>
 
-        <div class="id-member">
-          <div class="id-label">Member Name</div>
-          <div class="id-value">{{selectedMember}}</div>
-        </div>
+      <div class="id-field">
+        <div class="label">Member Name</div>
+        <div class="value">Jennifer M Contreras</div>
+      </div>
 
-        <div class="id-row-3">
-          <div class="id-field">
-            <div class="label">RxBin</div>
-            <div class="value">003585</div>
-          </div>
-          <div class="id-field">
-            <div class="label">RxPCN</div>
-            <div class="value">7000</div>
-          </div>
-          <div class="id-field">
-            <div class="label">RxGroup</div>
-            <div class="value">7000</div>
-          </div>
+      <div class="row-fields">
+        <div>
+          <div class="label">RxBin</div>
+          <div class="value">003585</div>
         </div>
-
-        <div class="id-row-3" style="margin-top:6px">
-          <div class="id-field" style="grid-column:3/4">
-            <div class="label">Group No</div>
-            <div class="value">12345-A00</div>
-          </div>
+        <div>
+          <div class="label">RxPCN</div>
+          <div class="value">7000</div>
         </div>
-
-        <div class="id-actions">
-          <button class="tiny-btn"> Add to Apple Wallet</button>
-          <div class="right" style="display:flex;gap:8px">
-            <button class="tiny-btn">Share</button>
-            <button class="tiny-btn">Full Screen</button>
-          </div>
+        <div>
+          <div class="label">RxGroup</div>
+          <div class="value">7000</div>
+        </div>
+        <div>
+          <div class="label">Group No</div>
+          <div class="value">12345-A00</div>
         </div>
       </div>
     </div>
 
-    <div class="web-right web-list">
-      <div class="row"><a [routerLink]="['/benefits']">Benefits</a><span>›</span></div>
-      <div class="row"><a [routerLink]="['/claims']">Claims</a> <span>›</span></div>
-      <div class="row"><a [routerLink]="['/contacts']">Contacts</a><span>›</span></div>
-      <div class="row"><a [routerLink]="['/care']">Care Outside of Kaiser</a> <span>›</span></div>
+    <!-- Maryland Logo -->
+    <div class="right">
+      <img src="/assets/maryland-logo.png" alt="Maryland" class="md-logo">
     </div>
   </div>
+</div>
+
+<!-- Actions (outside card) -->
+<div class="card-actions">
+  <a class="wallet-btn">
+    <img src="/assets/apple-wallet-image.png" alt="Apple Wallet" class="wallet-icon" />
+    <!-- <div class="wallet-text">
+    <span>Add to</span>
+    <span>Apple Wallet</span>
+  </div> -->
+  </a>
+  <div class="actions-right">
+    <button class="link-btn"><i class="fas fa-share-square"></i> Share</button>
+    <button class="link-btn">⤢ Full Screen</button>
+  </div>
+</div>
+
+
+        <div class="checkin-container">
+          <button class="btn primary">Check in</button>
+        </div>
+      </div>
+
+      <div class="web-right web-list">
+        <div class="row"><a [routerLink]="['/benefits']">Benefits</a><span>›</span></div>
+        <div class="row"><a [routerLink]="['/claims']">Claims</a> <span>›</span></div>
+        <div class="row"><a [routerLink]="['/contacts']">Contacts</a><span>›</span></div>
+        <div class="row"><a [routerLink]="['/care']">Care Outside of Kaiser</a> <span>›</span></div>
+      </div>
+    </div>
   </ng-container>
   <app-footer></app-footer>
 </div>

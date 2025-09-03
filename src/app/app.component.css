@@ -1,0 +1,19 @@
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* make .web-shell fill available space */
+.web-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* push footer down */
+app-footer {
+  margin-top: auto;
+}
