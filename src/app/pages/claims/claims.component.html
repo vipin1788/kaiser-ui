@@ -3,34 +3,47 @@
 
   <div class="content">
     <div class="claims-shell">
-  <h2 class="claims-title">Claims</h2>
-  <p class="claims-subtitle">Send claims to:</p>
+      <h2 class="claims-title">Claims</h2>
+      <p class="claims-subtitle">Send claims to:</p>
 
-  <!-- Claims Administration card -->
-  <div class="claim-card">
-    <div class="claim-title">Claims Administration</div>
-    <div class="claim-address">
-      P.O. Box 30766 <br />
-      Salt Lake City, UT 84130
-    </div>
-    <div class="claim-edi">EDI Payor ID: 91051</div>
-  </div>
+      <!-- Claims Administration card -->
+      <div class="claim-card">
+        <div class="claim-title">Claims Administration</div>
+        <div class="claim-address">
+          {{ data?.claimsAdminInformation?.payorIdDetails.line1 }} <br />
+          {{ data?.claimsAdminInformation?.payorIdDetails.city }}, {{ data?.claimsAdminInformation?.payorIdDetails.state
+          }} {{ data?.claimsAdminInformation?.payorIdDetails.zipcode }}
+        </div>
+        <div class="claim-edi">{{ data?.claimsAdminInformation?.claimsEdiPayorIdLabel }}: {{
+          data?.claimsAdminInformation?.payorIdDetails.ediPayorId }}</div>
+      </div>
 
-  <!-- Cigna Healthcare Providers card -->
-  <p class="claims-subtitle">For Cigna Healthcare Providers:</p>
-  <div class="claim-card">
-    <div class="claim-title">Cigna Medical Claims</div>
-    <div class="claim-address">
-      P.O. Box 188061 <br />
-      Chattanooga, TN 37422
-    </div>
-    <div class="claim-edi">EDI Payor ID: 62308</div>
-  </div>
+      <!-- Cigna Healthcare Providers card -->
+      @for (section of data?.claimsOutOfKaiserInformation; track section.claimsOutOfKaiserSubtitle) {
+      <p class="claims-subtitle">{{ section.claimsOutOfKaiserSubtitle }}</p>
 
-    <div class="call-box">
-      <div class="phone">Member Services: 1-800-432-5250</div>
-      <button class="call-btn">Call Member Services</button>
+      <!-- @for (claim of section.claims; track claim.ediPayorId) { -->
+      <div class="claim-card">
+        <div class="claim-title">{{ section?.claimsOutOfKaiserTitle }}</div>
+
+        <div class="claim-address">
+          {{ section?.payorIdDetails.line1 }} <br />
+          {{ section?.payorIdDetails.city }}, {{ section?.payorIdDetails.state }} {{ section?.payorIdDetails.zipcode }}
+        </div>
+
+        <div class="claim-edi">
+          {{ data?.claimsAdminInformation?.claimsEdiPayorIdLabel }}: {{ section?.payorIdDetails?.ediPayorId }}
+        </div>
+      </div>
+      <!-- } -->
+      }
+
+
+      <div class="call-box">
+        @for (contact of data?.claimsMemberServicesContact; track contact.number) {
+        <div class="phone">{{ contact.title }}: {{ contact.number }}</div>
+        <button class="call-btn">Call {{ contact.title }}</button>
+        }
+      </div>
     </div>
   </div>
-  <app-footer></app-footer>
-</div>

@@ -1,5 +1,5 @@
 <div class="app-header">
-  <button *ngIf="showBackButton" class="back" (click)="goBack()">Back</button>
+  <button *ngIf="showBackButton" class="back" (click)="goBack()" [disabled]="!hasNavigated">Back</button>
   <h1 class="title">{{ headerTitle }}</h1>
   <span class="spacer"></span>
 </div>

@@ -6,6 +6,10 @@
   color: #111827;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
+.member-header {
+  max-width: 70%;
+  margin: 0 auto;
+}
 
 .web-topbar {
   display: flex;

@@ -1,4 +1,6 @@
-<app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+<div class="member-header">
+  <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+</div>
 <div class="web-shell">
   <div class="web-topbar">
     <div class="web-brand">🏥 Member Portal</div>
@@ -6,9 +8,9 @@
       <button class="tab" [class.active]="activeTab === 'idcards'" (click)="setActiveTab('idcards')">
         ID Cards
       </button>
-      <button class="tab" [class.active]="activeTab === 'travelids'" (click)="setActiveTab('travelids')">
+      <!-- <button class="tab" [class.active]="activeTab === 'travelids'" (click)="setActiveTab('travelids')">
         Travel IDs
-      </button>
+      </button> -->
     </div>
   </div>
   <ng-container *ngIf="activeTab === 'idcards'">
@@ -102,5 +104,4 @@
       </div>
     </div>
   </ng-container>
-  <app-footer></app-footer>
 </div>

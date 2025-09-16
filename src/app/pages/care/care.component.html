@@ -23,27 +23,7 @@
       </p>
     </div>
 
-    <div class="policy">
-      <p>
-        The Cigna Healthcare<sup>SM</sup> PPO Network only provides access to care outside Kaiser Permanente states of
-        CA, CO, GA, HI, MD, OR, VA, WA, and DC. The Cigna Healthcare PPO Network only provides access to care in
-        non-Kaiser Permanente states and refers to providers (doctors, hospitals, specialists) contracted as part of
-        the Cigna Healthcare PPO Network for Shared Administration. Benefits are not insured by Cigna or Affiliates.
-      </p>
-
-      <p>
-        This policy is regulated by the Commissioner.
-      </p>
-
-      <p>
-        This card is for identification only. Use of this card is subject to the applicable agreement.
-      </p>
-
-      <p>
-        The Added Choice Plan In-Network Provider tier is underwritten by Kaiser Permanente Foundation Health Plan
-        of Georgia, Inc. The Out-of-Network Provider tier is underwritten by Kaiser Permanente Insurance Company,
-        a subsidiary of Kaiser Foundation Health Plan, Inc.
-      </p>
+    <div class="policy" [innerHTML]="regularData">
     </div>
 
     <div class="logos">
@@ -55,6 +35,4 @@
       <div>LOGO</div>
     </div>
   </div>
-
-  <app-footer></app-footer>
 </div>

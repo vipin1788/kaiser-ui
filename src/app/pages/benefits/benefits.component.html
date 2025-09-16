@@ -4,23 +4,30 @@
     <h3>Benefits</h3>
     <div class="info">For more information visit, <a href="#">my.kp.org/maryland</a></div>
 
+    @for(plan of data; track plan.planName) {
     <div class="card">
       <div class="item plan">
         <div class="icon">i</div>
         <div>
-          <div class="title">Health Plan Name</div>
+          <div class="title">{{ plan?.planName }}</div>
           <div class="lines">Kaiser Permanente Select HSA-Qualified Deductible HMO Plan</div>
         </div>
       </div>
 
-      <div class="item"><div class="title">Deductible</div><div class="lines">HMO: $150 / $650 DED<br/>PAR Tier: $250 / $750 DED<br/>Non-Par Tier: $350 / $750 DED</div></div>
-      <div class="item"><div class="title">Primary Care</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
-      <div class="item"><div class="title">Specialty Care</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
-      <div class="item"><div class="title">Urgent Care</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
-      <div class="item"><div class="title">Emergency</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
-      <div class="item"><div class="title">Hospital</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
-      <div class="item"><div class="title">Out-of-Pocket Max</div><div class="lines">HMO: $xxx<br/>PAR Tier: $xxxx<br/>Non-Par Tier: $xxxx</div></div>
+      @for(item of plan | keyvalue; track item.key) {
+        @if(isJsonObject(item.value)) {
+        <div class="item"><div class="title">{{item.key | camelToSpace | titlecase}}</div>
+         <div class="lines">
+        @for(sub of getKeyValueArray(item.value); track sub.key) {
+          {{ sub.key }}: {{ sub.value }}<br/>
+        }
+      </div>
+        <!-- <div class="lines">HMO: $150 / $650 DED<br/>PAR Tier: $250 / $750 DED
+          <br/>Non-Par Tier: $350 / $750 DED</div> -->
+        </div>
+        }
+      }
     </div>
+  }
   </div>
-  <app-footer></app-footer>
 </div>
