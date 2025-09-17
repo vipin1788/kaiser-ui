@@ -16,20 +16,20 @@
   <ng-container *ngIf="activeTab === 'idcards'">
     <div class="web-grid">
       <div class="web-left">
+        <div class="member-heading">Viewing ID for member:</div>
         <div class="member-chip">
           <div class="avatar"> <i class="fas fa-users"></i></div>
           <div>
             <div class="name">{{selectedMember}}</div>
-            <div class="hint">Viewing ID for member</div>
           </div>
           <span class="chev">▾</span>
 
           <!-- Dropdown -->
-          <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
+          <!-- <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
             <option *ngFor="let member of members" [value]="member">
               {{ member }}
             </option>
-          </select>
+          </select> -->
         </div>
 
         <div class="id-card">
@@ -97,10 +97,27 @@
       </div>
 
       <div class="web-right web-list">
-        <div class="row"><a [routerLink]="['/benefits']">Benefits</a><span>›</span></div>
-        <div class="row"><a [routerLink]="['/claims']">Claims</a> <span>›</span></div>
-        <div class="row"><a [routerLink]="['/contacts']">Contacts</a><span>›</span></div>
-        <div class="row"><a [routerLink]="['/care']">Care Outside of Kaiser</a> <span>›</span></div>
+        <div class="card-heading">Your Card Information</div>
+        <div class="row">
+          <i class="fas fa-umbrella icon"></i>
+          <a [routerLink]="['/benefits']">Benefits</a>
+          <span class="arrow">›</span>
+        </div>
+        <div class="row">
+          <i class="fas fa-file-alt icon"></i>
+          <a [routerLink]="['/claims']">Claims</a>
+           <span class="arrow">›</span>
+          </div>
+        <div class="row">
+          <i class="fas fa-phone icon"></i>
+          <a [routerLink]="['/contacts']">Contacts</a>
+          <span class="arrow">›</span>
+        </div>
+        <div class="row">
+          <i class="fas fa-briefcase icon"></i>
+          <a [routerLink]="['/care']">Care Outside of Kaiser</a> 
+          <span class="arrow">›</span>
+        </div>
       </div>
     </div>
   </ng-container>
