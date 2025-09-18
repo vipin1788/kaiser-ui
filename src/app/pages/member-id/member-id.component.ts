@@ -18,7 +18,7 @@ export class MemberIdComponent implements OnInit {
 
   activeTab: string = 'idcards';
 
-  memberCardData: any[] = [];
+  memberCardData: any;
 
   pageTitle: string = 'Member Id';
   backButton: boolean = true;
@@ -72,11 +72,57 @@ export class MemberIdComponent implements OnInit {
       },
       error: (err) => console.error('Error fetching members', err)
     });
+
+    if(!this.memberCardData) {
+      this.memberCardData = {
+                "loggedInMember": {
+                    "mrn": "60128042",
+                    "regionCode": "08",
+                    "regionOfCare": "Southern California",
+                    "srcReferenceId": "08csu118042",
+                    "firstName": "Docsubanfn",
+                    "middleInitial": "",
+                    "lastName": "Docsubanln",
+                    "dateOfBirth": "01-13-1985",
+                    "userRole": "M",
+                    "guid": "",
+                    "familyIndicator": {
+                        "role": "SUBSCRIBER",
+                        "familyCount": "4"
+                    }
+                },
+                "products": [
+                    {
+                        "productName": "TRADITIONAL HMO SCR",
+                        "productOptionalName": "TRADITIONAL HMO SCR",
+                        "groupSubgroupIds": "104301-2",
+                        "rxBin": "51060",
+                        "rxPcn": "2725",
+                        "rxGroup": "74356",
+                        "contractUid": "36402800",
+                        "groupSubgroupFetch": ""
+                    }
+                ],
+                "proxyDetails": {}
+            }
+    }
   }
 
   onMemberChange(event: Event) {
     const value = (event.target as HTMLSelectElement).value;
     console.log('Selected Member:', value);
     this.selectedMember = value;
+  }
+
+  formatName(fName?: string, mName?: string, lName?: string) {
+    return fName+" "+mName + (mName ? " ":"")+ lName
+  }
+
+  getCardImage(imageUrl?: string) {
+    if(!imageUrl) {
+      return '/assets/maryland-logo.png';
+    } else {
+      return imageUrl;
+    }
   }
 }

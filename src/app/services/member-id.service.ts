@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class MemberIdService {
 
-  private memberIdCardApiUrl: string = `${environment.apiBaseUrl}/getMemberIdCardApi`;
+  private memberIdCardApiUrl: string = `${environment.apiBaseUrl}/getMemberIdCardData`;
 
   constructor(private http: HttpClient) {}
 
