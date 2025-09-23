@@ -21,33 +21,30 @@ export class BenefitsComponent implements OnInit {
     this.data = JSON.parse(sessionStorage.getItem('benefitData') ?? '[]')
     if(this.data.length == 0) {
       this.data = [
-                {
-                    "copaymentAmount": {
-                        "IN": "$150/$3000",
-                        "OUT": "60",
-                        "PPO": "0"
-                    },
-                    "deductibleAmount": {
-                        "IN": "60",
-                        "OUT": "60",
-                        "PPO": "60"
-                    },
-                    "planName": "TRADITIONAL HMO SCR"
-                }
-            ]
+    {
+      "micrositeContent": "For more information, visit",
+      "microSiteLink": "https://my.kp.org/maryland",
+      "benefitsPagePlanNameTitle": "Health Plan Name",
+      "benefitsPagePlanNameTitleAdaLabel": "Health Plan Name",
+      "planName": "TRADITIONAL HMO SCR",
+      "benefitInformation": [
+        {
+          "title": "Out-of-Pocket Max",
+          "titleAdaLabel": "Out-of-Pocket Max",
+          "tierOneLabel": null,
+          "tierOneAdaLabel": null,
+          "tierOneValue": "$1500/$3000"
+        },
+        {
+          "title": "Deductible",
+          "titleAdaLabel": "Deductible",
+          "tierOneLabel": null,
+          "tierOneAdaLabel": null,
+          "tierOneValue": "0"
+        }
+      ]
+    }
+  ]
     }
   }
-
-  isJsonObject(value: any): boolean {
-    console.log(value)
-  return value && typeof value === 'object' && Object.keys(value).length >0;
-}
-
-getKeyValueArray(obj: any) {
-  return Object.keys(obj).map(key => ({ key, value: this.checkForDollar(obj[key]) }));
-}
-
-checkForDollar(value: string) {
-  return value.toString().startsWith('$') ? value : ('$' + value)
-}
 }

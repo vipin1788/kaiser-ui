@@ -58,8 +58,8 @@ export class MemberIdComponent implements OnInit {
 }
     this.memberService.getMemberIdCardApi(req).subscribe({
       next: (data) => {
-        this.memberCardData = data.members[0].memberDetail;
-        this.benefitData = data.members[0].benefitData;
+        this.memberCardData = data.members[0].membersData;
+        this.benefitData = data.members[0].benefitsData;
         this.claimData = data.members[0].claimsData;
         this.contactData = data.members[0].contactsData;
         this.careData = data.members[0].contactsData;
@@ -75,7 +75,7 @@ export class MemberIdComponent implements OnInit {
 
     if(!this.memberCardData) {
       this.memberCardData = {
-                "loggedInMember": {
+                "loggedInUser": {
                     "mrn": "60128042",
                     "regionCode": "08",
                     "regionOfCare": "Southern California",

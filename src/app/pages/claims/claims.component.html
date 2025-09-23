@@ -3,10 +3,22 @@
 
   <div class="content">
     <div class="claims-shell">
+      
       <h2 class="claims-title">Claims</h2>
-      <p class="claims-subtitle">Send claims to:</p>
-
-      <!-- Claims Administration card -->
+      @for (claim of data.claimsAdminInformation; track claim.claimsPageEdiPayorIdValue) {
+        <p class="claims-subtitle">{{claim?.claimsPageAddressSectionTitle || 'Send claims to:'}}</p>
+        <div class="claim-card">
+          <div class="claim-title">{{claim?.claimsPageAddressSectionSubTitle || 'Claims Administration'}}</div>
+          <div class="claim-address">
+            {{claim?.claimsPageAddressLineOne || ''}} <br/>
+            {{claim?.claimsPageAddressLineTwo  || ''}}
+          </div>
+          <div class="claim-edi">
+            {{claim?.claimsPageEdiPayorIdLabel || 'EDI Payer Id'}}: {{claim?.claimsPageEdiPayorIdValue}}
+          </div>
+        </div>
+      }
+      <!-- <p class="claims-subtitle">Send claims to:</p>
       <div class="claim-card">
         <div class="claim-title">Claims Administration</div>
         <div class="claim-address">
@@ -16,13 +28,11 @@
         </div>
         <div class="claim-edi">{{ data?.claimsAdminInformation?.claimsEdiPayorIdLabel }}: {{
           data?.claimsAdminInformation?.payorIdDetails.ediPayorId }}</div>
-      </div>
+      </div> -->
 
-      <!-- Cigna Healthcare Providers card -->
-      @for (section of data?.claimsOutOfKaiserInformation; track section.claimsOutOfKaiserSubtitle) {
+      <!-- @for (section of data?.claimsOutOfKaiserInformation; track section.claimsOutOfKaiserSubtitle) {
       <p class="claims-subtitle">{{ section.claimsOutOfKaiserSubtitle }}</p>
 
-      <!-- @for (claim of section.claims; track claim.ediPayorId) { -->
       <div class="claim-card">
         <div class="claim-title">{{ section?.claimsOutOfKaiserTitle }}</div>
 
@@ -35,14 +45,13 @@
           {{ data?.claimsAdminInformation?.claimsEdiPayorIdLabel }}: {{ section?.payorIdDetails?.ediPayorId }}
         </div>
       </div>
-      <!-- } -->
-      }
+      } -->
 
 
       <div class="call-box">
-        @for (contact of data?.claimsMemberServicesContact; track contact.number) {
-        <div class="phone">{{ contact.title }}: {{ contact.number }}</div>
-        <button class="call-btn">Call {{ contact.title }}</button>
+        @for (contact of data?.claimsSupportContact; track contact.number) {
+        <div class="phone">{{ contact.title || 'Member Services'}}: {{ contact.number }}</div>
+        <button class="call-btn">Call {{ contact.title || 'Member Services'}}</button>
         }
       </div>
     </div>

@@ -20,7 +20,7 @@
         <div class="member-chip">
           <div class="avatar"> <i class="fas fa-users"></i></div>
           <div>
-            <div class="name">{{formatName(memberCardData?.loggedInMember?.firstName, memberCardData?.loggedInMember?.middleInitial, memberCardData?.loggedInMember?.lastName)}}</div>
+            <div class="name">{{formatName(memberCardData?.loggedInUser?.firstName, memberCardData?.loggedInUser?.middleInitial, memberCardData?.loggedInUser?.lastName)}}</div>
           </div>
           <span class="chev">▾</span>
 
@@ -36,7 +36,7 @@
           <!-- Blue Header -->
           <div class="id-card-header">
             <img src="/assets/kaiser-logo.png" alt="Kaiser Permanente" />
-            <span class="region">{{memberCardData?.loggedInMember?.regionOfCare}}</span>
+            <span class="region">{{memberCardData?.loggedInUser?.regionOfCare}}</span>
           </div>
 
           <!-- Card Body -->
@@ -44,12 +44,12 @@
             <div class="left">
               <div class="id-field">
                 <div class="label">Medical Record Number/ID</div>
-                <div class="value">{{memberCardData?.loggedInMember?.mrn}}</div>
+                <div class="value">{{memberCardData?.loggedInUser?.mrn}}</div>
               </div>
 
               <div class="id-field">
                 <div class="label">Member Name</div>
-                <div class="value">{{formatName(memberCardData?.loggedInMember?.firstName, memberCardData?.loggedInMember?.middleInitial, memberCardData?.loggedInMember?.lastName)}}</div>
+                <div class="value">{{formatName(memberCardData?.loggedInUser?.firstName, memberCardData?.loggedInUser?.middleInitial, memberCardData?.loggedInUser?.lastName)}}</div>
               </div>
 
               <div class="row-fields">

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/internal/Observable';
@@ -13,6 +13,10 @@ export class MemberIdService {
   constructor(private http: HttpClient) {}
 
   getMemberIdCardApi(memberIdCardReq: any): Observable<any> {
-    return this.http.post<any>(this.memberIdCardApiUrl, memberIdCardReq);
+    const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-token-here'
+  });
+    return this.http.post<any>(this.memberIdCardApiUrl, memberIdCardReq, {headers});
   }
 }

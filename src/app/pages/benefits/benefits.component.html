@@ -2,32 +2,25 @@
   <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
   <div class="content">
     <h3>Benefits</h3>
-    <div class="info">For more information visit, <a href="#">my.kp.org/maryland</a></div>
+    <div class="info">{{data[0].micrositeContent}}, <a href="#">{{data[0].micrositeContent}}</a></div>
 
-    @for(plan of data; track plan.planName) {
+    
     <div class="card">
       <div class="item plan">
         <div class="icon">i</div>
         <div>
-          <div class="title">{{ plan?.planName }}</div>
+          <div class="title">{{ data[0]?.benefitsPagePlanNameTitle }}</div>
           <div class="lines">Kaiser Permanente Select HSA-Qualified Deductible HMO Plan</div>
         </div>
       </div>
-
-      @for(item of plan | keyvalue; track item.key) {
-        @if(isJsonObject(item.value)) {
-        <div class="item"><div class="title">{{item.key | camelToSpace | titlecase}}</div>
-         <div class="lines">
-        @for(sub of getKeyValueArray(item.value); track sub.key) {
-          {{ sub.key }}: {{ sub.value }}<br/>
-        }
+      @for(plan of data[0].benefitInformation; track plan.title) {
+      <div class="item">
+        <div class="title">{{plan.title}}</div>
+        <div class="lines">HMO: {{plan.tierOneValue}}<br/>PAR Tier: $250 / $750 DED
+          <br/>Non-Par Tier: $350 / $750 DED</div>
       </div>
-        <!-- <div class="lines">HMO: $150 / $650 DED<br/>PAR Tier: $250 / $750 DED
-          <br/>Non-Par Tier: $350 / $750 DED</div> -->
-        </div>
-        }
-      }
+    }
     </div>
-  }
+  
   </div>
 </div>
