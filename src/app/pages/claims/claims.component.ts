@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../commons/header/header.component';
-import { LoaderComponent } from '../loader/loader.component';
+import { LoaderComponent } from '../../commons/loader/loader.component';
 
 @Component({
     selector: 'app-claims',

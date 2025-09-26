@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../commons/header/header.component';
 import { CamelToSpacePipe } from '../../pipes/camel-to-space.pipe';
-import { LoaderComponent } from '../loader/loader.component';
+import { LoaderComponent } from '../../commons/loader/loader.component';
 
 @Component({
   selector: 'app-benefits',

@@ -6,7 +6,7 @@ import { HeaderComponent } from '../../commons/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { MemberIdService } from '../../services/member-id.service';
 import { environment } from '../../../environments/environment';
-import { LoaderComponent } from '../loader/loader.component';
+import { LoaderComponent } from '../../commons/loader/loader.component';
 
 @Component({
   selector: 'app-member-id',
