@@ -6,11 +6,12 @@ import { HeaderComponent } from '../../commons/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { MemberIdService } from '../../services/member-id.service';
 import { environment } from '../../../environments/environment';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-member-id',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent, FormsModule ],
+  imports: [CommonModule, RouterModule, HeaderComponent, FormsModule, LoaderComponent ],
   templateUrl: './member-id.component.html',
   styleUrl: './member-id.component.css'
 })
@@ -19,6 +20,7 @@ export class MemberIdComponent implements OnInit {
   activeTab: string = 'idcards';
 
   memberCardData: any;
+  isLoading: boolean = false;
 
   pageTitle: string = 'Member Id';
   backButton: boolean = true;
@@ -37,6 +39,7 @@ export class MemberIdComponent implements OnInit {
   constructor(private memberService: MemberIdService) {}
 
    ngOnInit(): void {
+    this.isLoading = true
     sessionStorage.setItem('hasNavigated', 'false');
     this.loadMembers();
   }
@@ -58,6 +61,7 @@ export class MemberIdComponent implements OnInit {
 }
     this.memberService.getMemberIdCardApi(req).subscribe({
       next: (data) => {
+        this.isLoading = false;
         this.memberCardData = data.members[0].membersData;
         this.benefitData = data.members[0].benefitsData;
         this.claimData = data.members[0].claimsData;
@@ -74,6 +78,7 @@ export class MemberIdComponent implements OnInit {
     });
 
     if(!this.memberCardData) {
+      this.isLoading = false;
       this.memberCardData = {
                 "loggedInUser": {
                     "mrn": "60128042",

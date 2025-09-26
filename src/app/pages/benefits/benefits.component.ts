@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from '../../commons/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../commons/header/header.component';
 import { CamelToSpacePipe } from '../../pipes/camel-to-space.pipe';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-benefits',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, CamelToSpacePipe],
+  imports: [CommonModule, HeaderComponent, CamelToSpacePipe, LoaderComponent],
   templateUrl: './benefits.component.html',
   styleUrl: './benefits.component.css'
 })
@@ -15,10 +15,13 @@ export class BenefitsComponent implements OnInit {
   pageTitle: string = 'Benefits';
   backButton: boolean = true;
   data: any[]= [];
+  isLoading = false;
 
   ngOnInit(): void {
     sessionStorage.setItem('hasNavigated', 'true');
+    this.isLoading = true
     this.data = JSON.parse(sessionStorage.getItem('benefitData') ?? '[]')
+    this.isLoading = false;
     if(this.data.length == 0) {
       this.data = [
     {

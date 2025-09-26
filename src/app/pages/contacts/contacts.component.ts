@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from '../../commons/footer/footer.component';
 import { HeaderComponent } from '../../commons/header/header.component';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, LoaderComponent],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css'
 })
@@ -13,14 +13,17 @@ export class ContactsComponent implements OnInit {
   pageTitle: string = 'Contacts'; 
   backButton: boolean = true;
   data: any[] = [];
+  isLoading = false;
   alertBox = {
     message: 'Call 911 or go to the nearest emergency room',
     buttonText: 'Call 911'
   };
 
   ngOnInit(): void {
+    this.isLoading = true
     sessionStorage.setItem('hasNavigated', 'true');
     this.data = JSON.parse(sessionStorage.getItem('contactData') ?? '[]')
+    this.isLoading = false
     if(this.data.length == 0) {
       this.data = [
                 {

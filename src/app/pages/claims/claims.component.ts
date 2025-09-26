@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from '../../commons/footer/footer.component';
 import { HeaderComponent } from '../../commons/header/header.component';
+import { LoaderComponent } from '../loader/loader.component';
 
 @Component({
     selector: 'app-claims',
     standalone: true,
-    imports: [HeaderComponent],
+    imports: [HeaderComponent, LoaderComponent],
     templateUrl: './claims.component.html',
     styleUrl: './claims.component.css'
 })
@@ -13,10 +13,13 @@ export class ClaimsComponent implements OnInit {
     pageTitle: string = 'Claims';
     backButton: boolean = true;
     data: any;
+    isLoading: boolean = false
 
     ngOnInit(): void {
         sessionStorage.setItem('hasNavigated', 'true');
+        this.isLoading = true;
         this.data = JSON.parse(sessionStorage.getItem('claimData') ?? '{}')
+        this.isLoading = false;
         if (Object.keys(this.data).length == 0) {
             this.data = {
                 "claimsAdminInformation": [
