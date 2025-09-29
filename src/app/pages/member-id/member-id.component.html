@@ -3,17 +3,29 @@
   <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
 </div>
 <div class="web-shell">
-  <div class="web-topbar">
+  <!-- <div class="web-topbar">
     <div class="web-brand">🏥 Member Portal</div>
     <div class="web-actions">
       <button class="tab" [class.active]="activeTab === 'idcards'" (click)="setActiveTab('idcards')">
         ID Cards
       </button>
-      <!-- <button class="tab" [class.active]="activeTab === 'travelids'" (click)="setActiveTab('travelids')">
-        Travel IDs
-      </button> -->
     </div>
-  </div>
+  </div> -->
+  <div class="web-topbar">
+  <!-- Back Button -->
+  <div class="back-container">
+    <button class="back-btn">Back</button>
+    
+
+    <!-- Member Portal + ID Cards on same line -->
+    <div class="topbar-row">
+      <div class="web-brand">🏥 Member Portal</div>
+      <button class="tab" [class.active]="activeTab === 'idcards'" (click)="setActiveTab('idcards')">
+        ID Cards
+      </button>
+    </div>
+    </div>
+</div>
   <ng-container *ngIf="activeTab === 'idcards'">
     <div class="web-grid">
       <div class="web-left">
@@ -23,7 +35,7 @@
           <div>
             <div class="name">{{formatName(memberCardData?.loggedInUser?.firstName, memberCardData?.loggedInUser?.middleInitial, memberCardData?.loggedInUser?.lastName)}}</div>
           </div>
-          <span class="chev">▾</span>
+          <!-- <span class="chev">▾</span> -->
 
           <!-- Dropdown -->
           <!-- <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">

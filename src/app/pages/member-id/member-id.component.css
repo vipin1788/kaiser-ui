@@ -1,3 +1,32 @@
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: #0077c8; */
+  color: #0074AD;
+  cursor: pointer;
+  margin-bottom: 8px; /* space below back button */
+}
+
+.back-container {
+  margin-bottom: 8px;
+}
+
+.topbar-row {
+  display: flex;
+  justify-content: space-between; /* pushes items to edges */
+  align-items: center;
+  background: #ffffff;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 12px;
+  padding: 2px 2px;
+  /* box-shadow: 0 4px 16px rgba(17, 24, 39, .08); */
+  
+}
+
+/* add the custom css from above this */
 .web-shell {
   max-width: 70%;
   margin: 0 auto;
@@ -26,7 +55,7 @@
 }
 
 .web-topbar {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
@@ -58,8 +87,10 @@
 }
 
 .btn.primary {
-  background: #1166ff;
-  border-color: #1166ff;
+  /* background: #1166ff;
+  border-color: #1166ff; */
+  background: #0074AD;
+  border-color: #0074AD;
   color: #fff;
 }
 
@@ -115,9 +146,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #e5e7eb;
+  /* border: 1px solid #e5e7eb; */
   padding: 5px 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   position: relative;
   margin-bottom: 12px;
 }
@@ -157,14 +188,16 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   font-family: Arial, sans-serif;
   /* border: 1px solid #ddd; */
-  border: 1px solid #0077c8;
+  /* border: 1px solid #0077c8; */
+  border: #0074AD;
   /* 🎨 White background with blue gradient bottom-right */
   background: linear-gradient(135deg, #ffffff 70%, #e0f0ff 100%);
 }
 
 /* Blue header bar */
 .id-card-header {
-  background: #0077c8;
+  /* background: #0077c8; */
+  background: #0074AD;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -293,7 +326,8 @@
 .link-btn {
   background: none;
   border: none;
-  color: #0077c8;
+  /* color: #0077c8; */
+  color: #0074AD;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -307,7 +341,8 @@
 }
 
 .web-list .icon {
-  color: #0077c8;   /* blue */
+  /* color: #0077c8;    */
+  color: #0074AD;
   font-size: 16px;
   margin-right: 10px;
 }
@@ -378,19 +413,49 @@
 }
 
 .web-list .arrow {
-  color: #0077c8;   /* blue */
+  /* color: #0077c8;  */
+  color: #0074AD;
   font-size: 16px;
   font-weight: bold;
 }
 
 /* 🌐 Mobile responsive styles */
 @media (max-width: 600px) {
+
+
 body {
   margin: 0;
   padding: 0;
   background: #f5f6f8;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: #111827;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  /* color: #0077c8; */
+  color: #0074AD;
+  cursor: pointer;
+  margin-bottom: 8px; /* space below back button */
+}
+
+.back-container {
+  margin-bottom: 8px;
+}
+
+.topbar-row {
+  display: flex;
+  justify-content: space-between; /* pushes items to edges */
+  align-items: center;
+  background: #ffffff;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 12px;
+  padding: 2px 2px;
+  /* box-shadow: 0 4px 16px rgba(17, 24, 39, .08); */
+  
 }
 
 .web-shell {
@@ -410,7 +475,7 @@ body {
 
 /* Topbar */
 .web-topbar {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: space-between;
   background: #fff;
@@ -442,8 +507,10 @@ body {
 }
 
 .btn.primary {
-  background: #1166ff;
-  border-color: #1166ff;
+  /* background: #1166ff;
+  border-color: #1166ff; */
+  border: #0074AD;
+  background: #0074AD;
   color: #fff;
 }
 
@@ -469,10 +536,10 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  border: 1px solid #e5e7eb;
+  /* border: 1px solid #e5e7eb; */
   padding: 8px 12px;
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   margin-bottom: 12px;
 }
 
@@ -507,13 +574,15 @@ body {
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #0077c8;
+  /* border: 1px solid #0077c8; */
+  border: 1px solid #0074AD;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   background: linear-gradient(135deg, #ffffff 70%, #e0f0ff 100%);
 }
 
 .id-card-header {
-  background: #0077c8;
+  /* background: #0077c8; */
+  background: #0074AD;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -622,7 +691,8 @@ body {
 .link-btn {
   background: none;
   border: none;
-  color: #0077c8;
+  /* color: #0077c8; */
+  color: #0074AD;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -657,7 +727,8 @@ body {
 }
 
 .web-list .icon {
-  color: #0077c8;
+  /* color: #0077c8; */
+  color: #0074AD;
   font-size: 18px;
   margin-right: 10px;
 }
@@ -672,7 +743,8 @@ body {
 }
 
 .web-list .arrow {
-  color: #0077c8;
+  /* color: #0077c8; */
+  color: #0074AD;
   font-size: 16px;
   font-weight: bold;
   margin-left: auto;

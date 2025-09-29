@@ -9,7 +9,8 @@
 .app-header .back {
   background: none;
   border: 0;
-  color: #1166ff;
+  /* color: #1166ff; */
+  color: #0074AD;
   font-weight: 700;
   cursor: pointer;
 }

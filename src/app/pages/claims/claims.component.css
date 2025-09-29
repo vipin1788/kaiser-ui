@@ -85,8 +85,10 @@
 
 .call-box .call-btn {
   background: #fff;
-  border: 1px solid #1166ff;
-  color: #1166ff;
+  /* border: 1px solid #1166ff; */
+  border: 1px solid #0074AD;
+  color: #0074AD;
+  /* color: #1166ff; */
   font-weight: 700;
   padding: 10px 16px;
   border-radius: 999px;

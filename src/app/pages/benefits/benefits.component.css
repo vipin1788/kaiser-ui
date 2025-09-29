@@ -24,7 +24,8 @@
 }
 
 .content .info a {
-  color: #1166ff;
+  /* color: #1166ff; */
+  color: #0074AD;
   text-decoration: none;
 }
 

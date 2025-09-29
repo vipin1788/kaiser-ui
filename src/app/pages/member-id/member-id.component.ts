@@ -23,7 +23,7 @@ export class MemberIdComponent implements OnInit {
   isLoading: boolean = false;
 
   pageTitle: string = 'Member Id';
-  backButton: boolean = true;
+  backButton: boolean = false;
 
   benefitData: any[] = [];
   contactData: any[] = [];

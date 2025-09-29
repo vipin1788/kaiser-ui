@@ -60,7 +60,8 @@
 }
 
 .phone-card .phone-num {
-  color: #1166ff;
+  /* color: #1166ff; */
+  color: #0074AD;
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
