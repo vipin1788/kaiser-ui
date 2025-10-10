@@ -4,9 +4,10 @@ import { BenefitsComponent } from './pages/benefits/benefits.component';
 import { ClaimsComponent } from './pages/claims/claims.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CareComponent } from './pages/care/care.component';
+import { MobMemberIdComponent } from './pages/mob-member-id/mob-member-id.component';
 
 export const routes: Routes = [
-  { path: '', component: MemberIdComponent },
+  { path: '', component: MobMemberIdComponent },
   { path: 'benefits', component: BenefitsComponent },
   { path: 'claims', component: ClaimsComponent },
   { path: 'contacts', component: ContactsComponent },

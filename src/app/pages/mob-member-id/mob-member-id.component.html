@@ -1,0 +1,123 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="member-header">
+  <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+</div>
+<div class="web-shell">
+    
+  <div class="web-topbar">
+    <!-- <div class="web-brand">🏥 Member Portal</div> -->
+    <div class="web-actions">
+      <button class="tab" [class.active]="activeTab === 'idcards'" (click)="setActiveTab('idcards')">
+        ID Cards
+      </button>
+    </div>
+  </div>
+  <ng-container *ngIf="activeTab === 'idcards'">
+    <div class="member-heading">Viewing ID for member:</div>
+    <div class="member-chip">
+          <div class="avatar"> <i class="fas fa-users"></i></div>
+          <div>
+            <div class="name">{{formatName(memberCardData?.loggedInUser?.firstName, memberCardData?.loggedInUser?.middleInitial, memberCardData?.loggedInUser?.lastName)}}</div>
+          </div>
+          <!-- <span class="chev">▾</span> -->
+
+          <!-- Dropdown -->
+          <!-- <select [(ngModel)]="selectedMember" (change)="onMemberChange($event)" class="member-dropdown">
+            <option *ngFor="let member of members" [value]="member">
+              {{ member }}
+            </option>
+          </select> -->
+        </div>
+    <div class="web-grid">
+      <div class="web-left">
+
+        <div class="id-card">
+          <!-- Blue Header -->
+          <div class="id-card-header">
+            <img src="/assets/kaiser-logo.png" alt="Kaiser Permanente" />
+            <span class="region">{{memberCardData?.loggedInUser?.regionOfCare}}</span>
+          </div>
+
+          <!-- Card Body -->
+          <div class="id-card-body">
+            <div class="left">
+              <div class="id-field">
+                <div class="label">Medical Record Number/ID</div>
+                <div class="value">{{memberCardData?.loggedInUser?.mrn}}</div>
+              </div>
+
+              <div class="id-field">
+                <div class="label">Member Name</div>
+                <div class="value">{{formatName(memberCardData?.loggedInUser?.firstName, memberCardData?.loggedInUser?.middleInitial, memberCardData?.loggedInUser?.lastName)}}</div>
+              </div>
+
+              <div class="row-fields">
+                <div>
+                  <div class="label">RxBin</div>
+                  <div class="value">{{memberCardData?.products[0]?.rxBin}}</div>
+                </div>
+                <div>
+                  <div class="label">RxPCN</div>
+                  <div class="value">{{memberCardData?.products[0]?.rxPcn}}</div>
+                </div>
+                <div>
+                  <div class="label">RxGroup</div>
+                  <div class="value">{{memberCardData?.products[0]?.rxGroup}}</div>
+                </div>
+                <div>
+                  <div class="label">Group No</div>
+                  <div class="value">{{memberCardData?.products[0]?.groupSubgroupIds}}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Maryland Logo -->
+            <div class="right">
+              <img [src]="getCardImage(memberCardData?.products[0]?.groupLogoRefPath)" alt="Maryland" class="md-logo">
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions (outside card) -->
+        <div class="card-actions">
+          <a class="wallet-btn">
+            <img src="/assets/apple-wallet-image.png" alt="Apple Wallet" class="wallet-icon" />
+          </a>
+          <div class="actions-right">
+            <button class="link-btn"><i class="fas fa-share-square"></i> Share</button>
+            <button class="link-btn"><i class="fas fa-expand-alt"></i> Full Screen</button>
+          </div>
+        </div>
+
+
+        <div class="checkin-container">
+          <button class="btn primary">Check in</button>
+        </div>
+      </div>
+
+      <div class="web-right web-list">
+        <div class="card-heading">Your Card Information</div>
+        <div class="row">
+          <i class="fas fa-umbrella icon"></i>
+          <a [routerLink]="['/benefits']">Benefits</a>
+          <span class="arrow">›</span>
+        </div>
+        <div class="row">
+          <i class="fas fa-file-alt icon"></i>
+          <a [routerLink]="['/claims']">Claims</a>
+           <span class="arrow">›</span>
+          </div>
+        <div class="row">
+          <i class="fas fa-phone icon"></i>
+          <a [routerLink]="['/contacts']">Contacts</a>
+          <span class="arrow">›</span>
+        </div>
+        <div class="row">
+          <i class="fas fa-briefcase icon"></i>
+          <a [routerLink]="['/care']">Care Outside of Kaiser</a> 
+          <span class="arrow">›</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

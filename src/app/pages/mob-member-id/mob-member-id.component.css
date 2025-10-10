@@ -1,0 +1,481 @@
+.web-shell {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #f5f6f8;
+  color: #111827;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.member-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 16px 6px !important;
+}
+
+.card-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 10px;
+}
+
+.app-header {
+  padding: 12px 1px !important;
+}
+
+.member-header {
+  max-width: 530px;
+  margin: 0 auto;
+}
+
+.web-brand {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0074AD;
+  border-color: #0074AD;
+  color: #fff;
+}
+
+.web-grid {
+  display: block;
+  grid-template-columns: 445px 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+
+.web-left,
+.web-right {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, .08);
+}
+
+.web-left {
+    padding: 14px;
+}
+
+.web-right {
+  padding: 10px;
+  margin-top: 10px
+}
+
+.web-list .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 8px;
+  border-bottom: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+
+.web-list .row a {
+  margin-left: 8px;
+  flex-grow: 1;   
+  text-align: left; 
+  color: #000;
+  text-decoration: none;
+}
+
+.web-list .row:last-child {
+  border-bottom: 0;
+}
+
+
+
+.member-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 10px;
+  position: relative;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 56px;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, .08);
+}
+
+.member-chip .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0a3c7d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}
+
+.member-chip .name {
+  font-weight: bold;
+  color: #000;
+}
+
+.member-chip .hint {
+  font-size: 12px;
+  color: #666;
+}
+
+.member-chip .chev {
+  margin-left: auto;
+}
+
+.id-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+  border: #0074AD;
+  background: linear-gradient(135deg, #ffffff 70%, #e0f0ff 100%);
+}
+
+
+.id-card-header {
+  background: #0074AD;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  align-items: center;
+  gap: 8px;
+}
+
+.id-card-header img {
+  height: 32px;
+  object-fit: contain;
+}
+
+.id-card-header .region {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+/* Card body */
+.id-card-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.id-field {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 12px;
+  color: #555;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.row-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.row-fields .label {
+  font-size: 11px;
+  color: #666;
+}
+
+.row-fields .value {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+
+.md-logo {
+  height: 40px;
+  margin-left: 10px;
+}
+
+/* -------- Actions belo card -------- */
+.card-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.wallet-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.wallet-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.wallet-btn img {
+  height: 23px;
+  width: 100%;
+
+}
+
+.wallet-icon {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.wallet-text span:first-child {
+  font-size: 12px;
+}
+
+.wallet-text span:last-child {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+
+.actions-right {
+  display: flex;
+  gap: 70px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #0074AD;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.web-list .icon {
+  color: #0074AD;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.web-right.web-list a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.web-right.web-list a:hover {
+  color: #444;
+}
+
+.member-dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.tabs {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 4px;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.tab.active {
+  background: #fff;
+  font-weight: 600;
+  color: #000;
+  font-size: medium;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.web-topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background: #f7f8fa; 
+}
+
+.web-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab {
+  min-width: 220px;
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
+.checkin-container {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.checkin-container .btn.primary {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 12px 0;
+}
+
+.web-list .arrow {
+  color: #0074AD;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+  /* Reduce padding and margins for tighter layout */
+  .web-shell {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .member-header {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  /* Headings smaller for small screens */
+  .member-heading,
+  .card-heading {
+    font-size: 14px;
+    text-align: center;
+    margin: 12px 0 !important;
+  }
+
+  /* Tabs and top bar */
+  .web-topbar {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .tab {
+    min-width: 150px; /* smaller button width */
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  /* ID card layout stacks vertically */
+  .id-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .id-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  /* Grid fields → 2 columns instead of 4 */
+  .row-fields {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Buttons and actions */
+  .card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .actions-right {
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .checkin-container .btn.primary {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  /* Member chips stack better */
+  .member-chip {
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .member-chip .avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .member-chip .name {
+    font-size: 14px;
+  }
+
+  .member-chip .hint {
+    font-size: 11px;
+  }
+
+  /* Web grid collapses to single column */
+  .web-grid {
+    display: block;
+  }
+
+  .web-left,
+  .web-right {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+
+
+
+
