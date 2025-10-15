@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../commons/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from '../../commons/loader/loader.component';
@@ -16,6 +16,8 @@ import { environment } from '../../../environments/environment';
 })
 export class MobMemberIdComponent {
    activeTab: string = 'idcards';
+   mrn: string ='';
+   region: string ='';
   
     memberCardData: any;
     isLoading: boolean = false;
@@ -34,9 +36,15 @@ export class MobMemberIdComponent {
       'Maria R Gomez'
     ];
   
-    constructor(private memberService: MemberIdService) {}
+    constructor(private memberService: MemberIdService, private route: ActivatedRoute) {}
   
      ngOnInit(): void {
+      this.route.queryParamMap.subscribe(params => {
+      this.mrn = params.get('mrn') || '';
+      this.region = params.get('region') || '';
+      console.log('MRN:', this.mrn);
+      console.log('Region:', this.region);
+    });
       this.isLoading = true
       sessionStorage.setItem('hasNavigated', 'false');
       this.loadMembers();
@@ -52,8 +60,8 @@ export class MobMemberIdComponent {
       appName: environment.appName,
       members: [
           {
-              mrn: '61210042',
-              mrnPrefix: '00'
+              mrn: this.mrn
+              //mrnPrefix: '00'
           }
       ]
   }

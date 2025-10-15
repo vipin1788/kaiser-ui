@@ -7,7 +7,12 @@ import { CareComponent } from './pages/care/care.component';
 import { MobMemberIdComponent } from './pages/mob-member-id/mob-member-id.component';
 
 export const routes: Routes = [
-  { path: '', component: MobMemberIdComponent },
+  {
+    path: 'member-id-page',
+    component: MobMemberIdComponent
+  },
+  { path: '', redirectTo: '/member-id-page', pathMatch: 'full' },
+  { path: '**', redirectTo: '/member-id-page' },
   { path: 'benefits', component: BenefitsComponent },
   { path: 'claims', component: ClaimsComponent },
   { path: 'contacts', component: ContactsComponent },
