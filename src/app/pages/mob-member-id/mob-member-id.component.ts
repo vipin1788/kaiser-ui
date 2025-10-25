@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../commons/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from '../../commons/loader/loader.component';
@@ -36,7 +36,9 @@ export class MobMemberIdComponent {
       'Maria R Gomez'
     ];
   
-    constructor(private memberService: MemberIdService, private route: ActivatedRoute) {}
+    constructor(private memberService: MemberIdService, private route: ActivatedRoute,
+      private router: Router
+    ) {}
   
      ngOnInit(): void {
       this.route.queryParamMap.subscribe(params => {
@@ -135,5 +137,9 @@ export class MobMemberIdComponent {
       } else {
         return imageUrl;
       }
+    }
+
+    goToCheckIn() {
+      this.router.navigate(['/check-in'])
     }
 }

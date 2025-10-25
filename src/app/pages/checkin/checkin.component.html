@@ -1,0 +1,51 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="checkin-container">
+
+  <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <img [src]="getProfileImage(data?.photoImage)" alt="Profile" class="profile-img">
+
+      <div class="right-profile">
+        <h3 class="name">{{formatName(data?.firstName, data?.middleInitial, data?.lastName)}}</h3>
+        <p class="dob">Date of Birth</p>
+        <p class="dob-value">{{formatDate(data?.dateOfBirth)}}</p>
+      </div>
+    </div>
+
+    <!-- Region + MRN Section -->
+    <div class="below-info">
+      <p class="region-care">Region of Care</p>
+      <p class="region-care-value">{{data?.careRegion ? data?.careRegion : 'California-Southern'}}</p>
+      <p class="mrn-label">Medical Record Number</p>
+      <p class="mrn">{{data?.mrn}}</p>
+    </div>
+
+    <!-- QR Section -->
+    <div class="qr-section">
+      <h4 class="check-in">Check in with QR Code</h4>
+      <p class="check-in-subtitle">Hold QR Code image under scanner and follow the on-screen instructions.</p>
+      <!-- <img src="/assets/qr_code.png" alt="QR Code" class="qr-img"> -->
+      <qrcode [qrdata]="data?.qrcodeMrn" [width]="222" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+
+    <!-- Footer Note -->
+     <div class="footer-note-container">
+        <span class="note-icon">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="#007AFF">
+    <circle cx="12" cy="12" r="10" fill="#007AFF"></circle>
+    <rect x="11" y="10" width="2" height="7" fill="white"></rect>
+    <rect x="11" y="7" width="2" height="2" fill="white"></rect>
+  </svg>
+</span>
+    <p class="footer-note">
+         
+      For use only at Kaiser Permanente facilities. May not be available at all locations.
+    </p>
+     </div>
+     
+  </div>
+</div>

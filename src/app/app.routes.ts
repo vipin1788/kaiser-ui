@@ -5,16 +5,16 @@ import { ClaimsComponent } from './pages/claims/claims.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
 import { CareComponent } from './pages/care/care.component';
 import { MobMemberIdComponent } from './pages/mob-member-id/mob-member-id.component';
+import { CheckinComponent } from './pages/checkin/checkin.component';
 
 export const routes: Routes = [
   {
-    path: 'member-id-page',
+    path: '',
     component: MobMemberIdComponent
   },
-  { path: '', redirectTo: '/member-id-page', pathMatch: 'full' },
-  { path: '**', redirectTo: '/member-id-page' },
   { path: 'benefits', component: BenefitsComponent },
   { path: 'claims', component: ClaimsComponent },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'care', component: CareComponent}
+  { path: 'care', component: CareComponent},
+  { path: 'check-in', component: CheckinComponent}
 ];
