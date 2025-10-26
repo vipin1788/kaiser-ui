@@ -1,0 +1,175 @@
+.web-shell {
+
+  max-width: 500px;
+  min-height: 92vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(240, 20%, 99%);
+  overflow: hidden; 
+}
+
+.member-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 16px 6px !important;
+}
+
+.card-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 10px;
+}
+
+.app-header {
+  padding: 12px 1px !important;
+}
+
+.member-header {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.id-card {
+
+  width: 85%;
+  transform: rotate(-90deg) scale(1.5); 
+  transform-origin: center;
+  background: linear-gradient(135deg, #ffffff 70%, #e0f0ff 100%);
+  margin: 0 auto; 
+  margin-bottom: 56px;
+  
+}
+
+.id-card-header {
+  background: #0074AD;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  align-items: center;
+  gap: 8px;
+}
+
+.id-card-header img {
+  height: 32px;
+  object-fit: contain;
+}
+
+.id-card-header .region {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+/* Card body */
+.id-card-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 31px;
+}
+
+.id-field {
+  margin-bottom: 22px;
+}
+
+.label {
+  font-size: 12px;
+  color: #555;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.row-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 31px;
+}
+
+.row-fields .label {
+  font-size: 11px;
+  color: #666;
+}
+
+.row-fields .value {
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+
+.md-logo {
+  height: 40px;
+  margin-left: 10px;
+}
+
+.card-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 10px;
+}
+
+.web-left,
+.web-right {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, .08);
+}
+
+.web-right.web-list a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+.web-grid {
+  display: block;
+  grid-template-columns: 445px 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.card-footer-text[_ngcontent-ng-c2903419358] {
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 27%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0074AD;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 19px;
+    padding: 10px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  fill: #0074AD;
+}
+
+

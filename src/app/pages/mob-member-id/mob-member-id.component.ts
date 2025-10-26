@@ -142,4 +142,7 @@ export class MobMemberIdComponent {
     goToCheckIn() {
       this.router.navigate(['/check-in'])
     }
+    goToViewFullCard() {
+      this.router.navigate(['/view-full-card'])
+    }
 }
