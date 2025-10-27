@@ -36,6 +36,8 @@ export class FullviewcardComponent {
         'John D Smith',
         'Maria R Gomez'
       ];
+
+      showShareIcon = true;
     
       constructor(private memberService: MemberIdService, private route: ActivatedRoute,
         private router: Router
@@ -48,10 +50,20 @@ export class FullviewcardComponent {
         this.region = params.get('region') || '';
         console.log('MRN:', this.mrn);
         console.log('Region:', this.region);
+         const widthInPixels = window.innerWidth;
+const heightInPixels = window.innerHeight;
+
+console.log("Width (px):", widthInPixels);
+console.log("Height (px):", heightInPixels);
       });
         this.isLoading = true
         this.loadMembers();
+        window.addEventListener('resize', () => {
+  console.log("Width (px):", window.innerWidth);
+  console.log("Height (px):", window.innerHeight);
+});
       }
+      
     
        setActiveTab(tab: string) {
         this.activeTab = tab;
@@ -103,9 +115,8 @@ export class FullviewcardComponent {
                         "familyIndicator": {
                             "role": "SUBSCRIBER",
                             "familyCount": "4"
-                        }
-                    },
-                    "products": [
+                        },
+                        "products": [
                         {
                             "productName": "TRADITIONAL HMO SCR",
                             "productOptionalName": "TRADITIONAL HMO SCR",
@@ -117,6 +128,8 @@ export class FullviewcardComponent {
                             "groupSubgroupFetch": ""
                         }
                     ],
+                    },
+                    
                     "proxyDetails": {}
                 }
         }

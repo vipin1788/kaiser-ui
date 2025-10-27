@@ -1,19 +1,19 @@
 <app-loader [isLoading]="isLoading"></app-loader>
+
 <div class="member-header">
-  <app-header [headerTitle]="pageTitle" [showBackButton]="backButton"></app-header>
+  <app-header [headerTitle]="pageTitle" [showBackButton]="backButton" [showShareIcon]="showShareIcon"></app-header>
 </div>
 
 <div class="web-shell">
-  <ng-container>
+  <div class="content-wrapper">
 
-    <div class="content-wrapper">
-
-      <!-- Rotated Card -->
-     <div class="id-card">
+    <div class="card-container">
+      <div class="id-card">
         <div class="id-card-header">
           <img src="/assets/kaiser-logo.png" alt="Kaiser Permanente" />
           <span class="region">{{memberCardData?.loggedInUser?.regionOfCare}}</span>
         </div>
+
         <div class="id-card-body">
           <div class="left">
             <div class="id-field">
@@ -36,34 +36,40 @@
             <div class="row-fields">
               <div>
                 <div class="label">RxBin</div>
-                <div class="value">{{memberCardData?.products[0]?.rxBin}}</div>
+                <div class="value">{{memberCardData?.loggedInUser?.products[0]?.rxBin}}</div>
               </div>
               <div>
                 <div class="label">RxPCN</div>
-                <div class="value">{{memberCardData?.products[0]?.rxPcn}}</div>
+                <div class="value">{{memberCardData?.loggedInUser?.products[0]?.rxPcn}}</div>
               </div>
               <div>
                 <div class="label">RxGroup</div>
-                <div class="value">{{memberCardData?.products[0]?.rxGroup}}</div>
+                <div class="value">{{memberCardData?.loggedInUser?.products[0]?.rxGroup}}</div>
               </div>
               <div>
                 <div class="label">Group No</div>
-                <div class="value">{{memberCardData?.products[0]?.groupSubgroupIds}}</div>
+                <div class="value">{{memberCardData?.loggedInUser?.products[0]?.groupSubgroupIds}}</div>
               </div>
             </div>
           </div>
 
           <div class="right">
-            <img [src]="getCardImage(memberCardData?.products[0]?.groupLogoRefPath)" alt="Maryland" class="md-logo">
+            <img [src]="getCardImage(memberCardData?.loggedInUser?.products[0]?.groupLogoRefPath)" alt="Logo" class="md-logo" />
           </div>
         </div>
       </div>
-
-      <!-- ✅ Text at Bottom -->
-      <div class="card-footer-text">
-        Your Card Information
-      </div>
-
     </div>
-  </ng-container>
+    <div class="card-footer-text">
+  <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <circle cx="4" cy="6" r="2"></circle>
+    <rect x="8" y="5" width="12" height="2" rx="1"></rect>
+    <circle cx="4" cy="12" r="2"></circle>
+    <rect x="8" y="11" width="12" height="2" rx="1"></rect>
+    <circle cx="4" cy="18" r="2"></circle>
+    <rect x="8" y="17" width="12" height="2" rx="1"></rect>
+  </svg>
+  Your Card Information
+</div>
+
+  </div>
 </div>

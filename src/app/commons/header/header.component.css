@@ -9,7 +9,6 @@
 .app-header .back {
   background: none;
   border: 0;
-  /* color: #1166ff; */
   color: #0074AD;
   font-weight: 700;
   cursor: pointer;
@@ -25,6 +24,23 @@
 
 .app-header .spacer {
   width: 40px;
+}
+
+.share-screen-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.share-icon {
+  width: 22px;
+  height: 22px;
+  fill: #0074AD; 
+}
+
+.share-screen-btn:hover .share-icon {
+  fill: #005f8c;
 }
 
 /* ---------- Mobile styles for App Header ---------- */
@@ -46,6 +62,6 @@
   }
 
   .app-header .spacer {
-    width: 30px; /* smaller so title centers better */
+    width: 30px;
   }
 }

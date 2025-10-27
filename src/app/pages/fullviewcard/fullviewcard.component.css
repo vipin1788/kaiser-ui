@@ -1,31 +1,12 @@
 .web-shell {
-
   max-width: 500px;
-  min-height: 92vh;
   margin: 0 auto;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background: hsl(240, 20%, 99%);
-  overflow: hidden; 
-}
-
-.member-heading {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111827;
-  margin: 16px 6px !important;
-}
-
-.card-heading {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111827;
-  margin: 10px;
-}
-
-.app-header {
-  padding: 12px 1px !important;
+  padding-top: 120px;
 }
 
 .member-header {
@@ -33,55 +14,62 @@
   margin: 0 auto;
 }
 
-.id-card {
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 170px;
+}
 
-  width: 85%;
-  transform: rotate(-90deg) scale(1.5); 
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.id-card {
+  width: 430px;
+  transform: rotate(-90deg) scale(1.5);
   transform-origin: center;
   background: linear-gradient(135deg, #ffffff 70%, #e0f0ff 100%);
-  margin: 0 auto; 
-  margin-bottom: 56px;
-  
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  margin-top: 71px;
+  border: 1px solid #1da7ec;
 }
 
 .id-card-header {
   background: #0074AD;
-  color: #fff;
+  color: white;
   display: flex;
   justify-content: space-between;
-  padding: 8px 12px;
-  font-size: 13px;
-  font-weight: bold;
   align-items: center;
-  gap: 8px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 14px 14px 0 0;
 }
 
 .id-card-header img {
-  height: 32px;
-  object-fit: contain;
+  height: 36px;
 }
 
-.id-card-header .region {
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  margin-top: 10px;
-}
 
-/* Card body */
 .id-card-body {
   display: flex;
   justify-content: space-between;
-  padding: 31px;
+  padding: 26px;
 }
 
 .id-field {
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .label {
-  font-size: 12px;
-  color: #555;
+  font-size: 13px;
+  color: #666;
 }
 
 .value {
@@ -93,83 +81,32 @@
 .row-fields {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-top: 31px;
-}
-
-.row-fields .label {
-  font-size: 11px;
-  color: #666;
-}
-
-.row-fields .value {
-  font-size: 13px;
-  font-weight: bold;
-  color: #000;
+  gap: 11px;
 }
 
 .md-logo {
-  height: 40px;
-  margin-left: 10px;
+  height: 50px;
 }
 
-.card-heading {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111827;
-  margin: 10px;
-}
-
-.web-left,
-.web-right {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(17, 24, 39, .08);
-}
-
-.web-right.web-list a {
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
-}
-.web-grid {
-  display: block;
-  grid-template-columns: 445px 1fr;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
+.card-footer-text {
+  text-align: center;
   width: 100%;
+  max-width: 425px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #0074AD;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
-
-.card-footer-text[_ngcontent-ng-c2903419358] {
-    position: absolute;
-    bottom: 7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 27%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    color: #0074AD;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 19px;
-    padding: 10px 0;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
 .footer-icon {
-  width: 18px;
-  height: 18px;
-  fill: #0074AD;
+  width: 22px;
+  height: 22px;
+  fill: #0074AD; /* You can change color if needed */
+  margin-right: 8px;
+  vertical-align: middle;
 }
-
-

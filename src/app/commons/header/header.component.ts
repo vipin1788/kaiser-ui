@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() headerTitle: string | undefined;
   @Input() showBackButton: boolean | undefined;
+  @Input() showShareIcon: boolean = false;
   hasNavigated: boolean = false;
 
   constructor(private location: Location) {}
